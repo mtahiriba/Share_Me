@@ -1,11 +1,38 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import {IoMdAdd, IoMdSearch} from 'react-icons/io'
-import profile from '../assets/profile.jpg'
 
-const Navbar = ({searchTerm, setSearchTerm}) => {
+const Navbar = ({searchTerm, setSearchTerm, user}) => {
 
   const navigate = useNavigate()
+
+  const logindata = () => {
+    if(user) 
+      return (
+        <div className='flex gap-3'>
+          <Link
+            to={`/user-profile/${user.sub}`}  
+            className="hidden md:block"
+          >
+              <img src={user.picture} alt="profile" className='w-14 h-12 rounded-lg'/>
+          </Link>
+          <Link
+            to='create-pin'  
+            className="bg-black text-white rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center"
+          >
+              <IoMdAdd/>
+          </Link>
+        </div>        
+      )
+      else
+        return (
+          <Link to='/login'>
+            <button className='bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md'>Login</button>
+          </Link>
+        )
+  }
+  
+  
 
   return (
     <div className='flex gap-2 md:gap-5 w-full mt-5 pb-7'>
@@ -20,22 +47,7 @@ const Navbar = ({searchTerm, setSearchTerm}) => {
             onFocus={() => navigate('/search')}
           />
         </div>
-        <div className='flex gap-3'>
-          <Link
-            to='/user-profile/12345'  
-            className="hidden md:block"
-          >
-              <img src={profile} alt="profile" className='w-14 h-12 rounded-lg'/>
-          </Link>
-          <Link
-            to='create-pin'  
-            className="bg-black text-white rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center"
-          >
-              <IoMdAdd/>
-          </Link>
-
-
-        </div>
+        {logindata()}
     </div>
   )
 }

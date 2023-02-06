@@ -1,7 +1,7 @@
 import React from 'react'
-import GoogleLogin from 'react-google-login'
+import { GoogleLogin } from '@react-oauth/google'
+import jwt_decode from "jwt-decode";
 import {useNavigate} from 'react-router-dom'
-import {FcGoogle} from 'react-icons/fc'
 import shareVideo from '../assets/share.mp4'
 import logo from '../assets/logowhite.png'
 
@@ -10,15 +10,15 @@ const Login = () => {
     const navigate = useNavigate();
 
     const responseGoogle = (response) => {
-        console.log("Muhammad Tahir's Responce  ", response)
-        console.log(process.env.REACT_APP_GOOGLE_API_TOKEN)
+        var decoded = jwt_decode(response.credential);
+        console.log(decoded)
         
-        if(false){
-            navigate('/', {replace: true})
-        }
+        localStorage.setItem('user', JSON.stringify(decoded))
+        navigate('/', {replace: true})
     }
 
   return (
+
     <div className='flex justify-start items-center flex-col h-screen'>
         <div className='relative w-full h-full'>
             <video 
@@ -36,20 +36,10 @@ const Login = () => {
                 </div>
                 <div className='shadow-2xl'>
                     <GoogleLogin
-                        clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
-                        render={renderProps => (
-                            <button
-                                type='button'
-                                className='bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none'
-                                onClick={renderProps.onClick}
-                                disabled={renderProps.disabled}
-                                >
-                                <FcGoogle className='mr-4'/> Sign in with Google
-                            </button>
-                        )}
                         onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={'single_host_origin'}
+                        onError={()=>{
+                            console.log("Login Error")
+                        }}
                     />
                 </div>
             </div>

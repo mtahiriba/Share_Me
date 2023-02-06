@@ -7,16 +7,18 @@ import {POSTS} from '../Shared/Posts'
 
 const Feed = () => {
 
-  const [loading, setLoading] = useState(false)
-  const [pins, setPins] = useState(null)
-  const {catagoryId} = useParams()
+  const [loading, setLoading] = useState(false);
+  const [pins, setPins] = useState(null);
+  const {catagoryId} = useParams();
 
   useEffect(() => {
     setLoading(true)
-
+    console.log('catagoryId', catagoryId)
     if(catagoryId) {
-      setPins(POSTS)
-      setLoading(false)
+      // setTimeout(() => {
+      //   setPins(POSTS)
+      //   setLoading(false)
+      // }, 1000)
     }
     else{
       setTimeout(() => {
