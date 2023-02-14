@@ -1,25 +1,31 @@
 import React, {useState} from 'react'
-import {useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 // import {v4 as uuidv4} from 'uuid'
 import {MdDownloadForOffline} from 'react-icons/md'
 import {AiTwotoneDelete} from 'react-icons/ai'
 import {BsFillArrowUpRightCircleFill} from 'react-icons/bs'
 
-const Pin = ({ pin }) => {
+const Pin = ({ pin, user }) => { 
 
     const [postHover, setPostHover] = useState(false);
     const navigate = useNavigate()
 
-    const alreadySaved = !!(pin.save.filter((item) => item.id === 1))?.length
+    const alreadySaved = !!(pin.save.filter((item) => item.id === user.sub))?.length
 
     const savePin = (id) => {
       if(!alreadySaved){
-        //post to save
+        pin.save.push({
+            id: user.sub,
+            userName: user.name,
+            image: user.picture
+        })
+        console.log(pin.save)
       }
     }
 
     const deletePin = (id) => {
       //delete post
+
     }
 
 
@@ -28,7 +34,7 @@ const Pin = ({ pin }) => {
         <div
             onMouseEnter={()=>setPostHover(true)}
             onMouseLeave={()=>setPostHover(false)}
-            onClick={()=>navigate(`/post/${pin._id}`)}
+            onClick={()=>navigate(`/pin-detail/${pin._id}`)}
             className="relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img className='rounded-lg' alt='user-post' src={pin.imageUrl}/>
@@ -37,7 +43,7 @@ const Pin = ({ pin }) => {
                 style={{ height:"100%" }}
             >
               <div className='flex items-center justify-between '>
-                <div className='flex gap-2'>
+                <div className='flex gap-2'> 
                     <a 
                       href={`${pin.imageUrl}?dl=`}
                       download
@@ -75,7 +81,7 @@ const Pin = ({ pin }) => {
                     {pin.destination.length > 20 ? pin.destination.slice(8,20) : pin.destination.slice(8)}
                   </a>
                 )}
-                { pin.postedBy?.id === 1 && (
+                { pin.postedBy?.id === user.sub && (
                   <button
                     type='button'
                     onClick={(e)=>{
@@ -91,6 +97,17 @@ const Pin = ({ pin }) => {
             </div>
           )}
         </div>
+        <Link
+          to={`user-profile/${user.sub}`}
+          className='flex-gap-2 flex items-center mt-2'
+        >
+          <img 
+            className='w-8 h-8 rounded-full object-cover'
+            src={pin.postedBy.image} 
+            alt="user-profile"
+          />
+          <p className='font-semibold capitalize p-2'>{pin.postedBy.userName}</p>
+        </Link>
     </div>
   )
 }

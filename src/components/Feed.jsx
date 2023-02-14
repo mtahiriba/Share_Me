@@ -5,7 +5,7 @@ import MasonryLayout from './MasonryLayout'
 import Spinner from './Spinner'
 import {POSTS} from '../Shared/Posts'
 
-const Feed = () => {
+const Feed = ({ user}) => {
 
   const [loading, setLoading] = useState(false);
   const [pins, setPins] = useState(null);
@@ -13,12 +13,13 @@ const Feed = () => {
 
   useEffect(() => {
     setLoading(true)
-    console.log('catagoryId', catagoryId)
     if(catagoryId) {
-      // setTimeout(() => {
-      //   setPins(POSTS)
-      //   setLoading(false)
-      // }, 1000)
+      setTimeout(() => {
+        
+        const catg = POSTS.filter(post => post.catagory === catagoryId)
+        setPins(catg)
+        setLoading(false)
+      }, 1000)
     }
     else{
       setTimeout(() => {
@@ -32,8 +33,8 @@ const Feed = () => {
   if(loading) return <Spinner message="We are adding new ideas to your feed!"/>
     
   return (
-    <div>
-      {pins && <MasonryLayout pins={pins}/>}
+    <div> 
+      {pins && <MasonryLayout pins={pins} user={user}/>}
     </div>
   )
 }
