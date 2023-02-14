@@ -62,6 +62,7 @@ const CreatePin = ({ user }) => {
             image: user.picture
         },
         save: [],
+        comments: [],
       }
       
       POSTS.push(pin);
