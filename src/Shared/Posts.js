@@ -12,7 +12,7 @@ export const POSTS = [
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
         save: [{
-            id: 2,
+            id: '101636329556231496930',
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         }],
@@ -37,7 +37,7 @@ export const POSTS = [
                 image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
             },
             {
-                id: 2,
+                id: '101636329556231496930',
                 userName: 'Muhammad Tahir',
                 image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
             },

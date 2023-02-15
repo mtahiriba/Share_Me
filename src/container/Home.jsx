@@ -65,7 +65,7 @@ const Home = () => {
             <Routes>
                 <Route path='/*' element={<Pins user={user && user}/>} />
                 {user && (
-                    <Route path={`/user-profile/${user.sub}`} element={<UserProfile />} />
+                    <Route path={'/user-profile/:userId'} element={<UserProfile />} /> 
                 )}
                 
             </Routes>

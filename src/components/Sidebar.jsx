@@ -4,18 +4,12 @@ import {RiHomeFill} from 'react-icons/ri'
 // import {IoIosArrowForward} from 'react-icons/io'
 
 import logo from '../assets/logo.png'
+import {CATEGORIES} from '../Shared/Categories'
 
 const isNotActiveStyle = 'flex items-center px-3 gap-3 text-gray-500 hover:bg-gray-100 hover:text-black transition-all duration-200 ease-in-out capiatlize';
 const isActiveStyle = 'flex items-center px-3 gap-3 font-extrabold border-r-2 border-black hover:bg-gray-100 transition-all duration-200 ease-in-out capiatlize';
 
-const categories = [
-  {name: 'Animals'},
-  {name: 'Wallpapers'},
-  {name: 'Photography'},
-  {name: 'Gaming'},
-  {name: 'Coding'},
-  {name: 'Others'},
-]
+const categories = CATEGORIES
 
 const Sidebar = ({closeToggle, user}) => {
   return (
@@ -39,13 +33,14 @@ const Sidebar = ({closeToggle, user}) => {
                 </NavLink>
                 <h3 className='mt-2 px-5 text-base 2xl:text-xl'>Discover categories</h3>
                 {
-                  categories.slice(0, categories.length - 1).map((category) => (
+                  categories.slice(0, categories.length).map((category) => (
                     <NavLink
                       to={`/category/${category.name}`}
                       className={({isActive}) => isActive ? isActiveStyle : isNotActiveStyle}
                       onClick={() => closeToggle && closeToggle(false)}
                       key={category.name}
                     >
+                      <img src={category.image} className="w-8 h-8 rounded-full shadow-sm " alt="category"/>
                       {category.name}
                     </NavLink>
                   ))
