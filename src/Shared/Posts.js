@@ -26,7 +26,7 @@ export const POSTS = [
         catagory: 'Wallpapers',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -52,7 +52,7 @@ export const POSTS = [
         catagory: 'Coding',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -71,7 +71,7 @@ export const POSTS = [
         catagory: 'Coding',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -90,7 +90,7 @@ export const POSTS = [
         catagory: 'Coding',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -109,7 +109,7 @@ export const POSTS = [
         catagory: 'Wallpapers',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -128,7 +128,7 @@ export const POSTS = [
         catagory: 'Photography',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -147,7 +147,7 @@ export const POSTS = [
         catagory: 'Photography',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -166,7 +166,7 @@ export const POSTS = [
         catagory: 'Photography',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -185,7 +185,7 @@ export const POSTS = [
         catagory: 'Gaming',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -204,7 +204,7 @@ export const POSTS = [
         catagory: 'Photography',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },
@@ -223,7 +223,7 @@ export const POSTS = [
         catagory: 'Wallpapers',
         about: 'This is a test post',
         postedBy: {
-            id: 1,
+            id: "101636329556231496930",
             userName: 'Muhammad Tahir',
             image: 'https://lh3.googleusercontent.com/a/AEdFTp6j-UbHpBKXNe7jqzgyzc1WyrpCFW20B8kQMbV9YQ=s96-c'
         },

@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-
 import MasonryLayout from './MasonryLayout'
 import Spinner from './Spinner'
 import {POSTS} from '../Shared/Posts'
 
-const Feed = ({ user}) => {
+const Feed = ({ user }) => {
 
   const [loading, setLoading] = useState(false);
   const [pins, setPins] = useState(null);
@@ -15,11 +14,10 @@ const Feed = ({ user}) => {
     setLoading(true)
     if(catagoryId) {
       setTimeout(() => {
-        
         const catg = POSTS.filter(post => post.catagory === catagoryId)
         setPins(catg)
         setLoading(false)
-      }, 1000)
+      }, 2000)
     }
     else{
       setTimeout(() => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoogleLogin } from '@react-oauth/google'
 import jwt_decode from "jwt-decode";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import shareVideo from '../assets/share.mp4'
 import logo from '../assets/logowhite.png'
 
@@ -11,8 +11,6 @@ const Login = () => {
 
     const responseGoogle = (response) => {
         var decoded = jwt_decode(response.credential);
-        console.log(decoded)
-        
         localStorage.setItem('user', JSON.stringify(decoded))
         navigate('/', {replace: true})
     }
@@ -32,7 +30,9 @@ const Login = () => {
         
             <div className='absolute flex flex-col justify-center items-center top-0 left-0 right-0 buttom-0 bg-blackOverlay h-full'>
                 <div className='p-5'>
-                    <img src={logo} width="130px" alt='logo'/>
+                    <Link to="/">
+                        <img src={logo} width="130px" alt='logo'/>
+                    </Link>
                 </div>
                 <div className='shadow-2xl'>
                     <GoogleLogin
