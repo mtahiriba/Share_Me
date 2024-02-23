@@ -7,8 +7,6 @@ import {CATEGORIES} from '../Shared/Categories'
 const isNotActiveStyle = 'flex items-center px-3 gap-3 text-gray-500 hover:bg-gray-100 hover:text-black transition-all duration-200 ease-in-out capiatlize';
 const isActiveStyle = 'flex items-center px-3 gap-3 font-extrabold border-r-2 border-black hover:bg-gray-100 transition-all duration-200 ease-in-out capiatlize';
 
-const categories = CATEGORIES
-
 const Sidebar = ({closeToggle, user}) => {
   return (
     <div className='flex flex-col justify-between bg-white h-full overflow-y-scrikk min-w-210 hide-scrollbar'>

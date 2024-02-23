@@ -9,7 +9,8 @@ import { Pins } from "./Pins";
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const scrollRef = useRef();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const user = JSON.parse(localStorage.getItem("user"));
+
 
 // show profile if user is logged in otherwise show login button
   const loginData = () => {

@@ -35,8 +35,8 @@ const PinDetail = ({ user }) => {
     }
   };
 
-  // Fetch the pin details
-  const fetchPinDetails = () => {
+  // Fetch the pin details on mount
+  useEffect(() => {
     setTimeout(() => {
       let details = POSTS.filter((post) => post._id.toString() === pinId);
       setPinDetail(details[0]);
@@ -49,11 +49,6 @@ const PinDetail = ({ user }) => {
         setPins(similiar);
       }
     }, 1000);
-  };
-
-  // Fetch the pin details on mount
-  useEffect(() => {
-    fetchPinDetails();
   }, [pinId]);
 
   if (!pinDetail) return <Spinner message="Loading pin..." />;

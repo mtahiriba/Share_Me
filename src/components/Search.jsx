@@ -14,9 +14,8 @@ const Search = ({ searchTerm, setSearchTerm, user }) => {
       setLoading(true);
 
       setTimeout(() => {
-
-        setLoading(false);
-      
+        setPins(null);
+        setLoading(false);      
       }, 300);
     }
 

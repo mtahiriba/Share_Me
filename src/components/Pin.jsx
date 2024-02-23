@@ -14,7 +14,7 @@ const Pin = ({ pin, user }) => {
   useEffect(() => {
     if (user)
       setAlreadySaved(!!pin.save.filter((item) => item.id === user?.sub)?.length);
-  }, [saved]);
+  }, [saved, user, pin.save]);
 
   const savePin = (id) => {
     if (!alreadySaved) {
