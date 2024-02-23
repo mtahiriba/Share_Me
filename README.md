@@ -9,7 +9,7 @@ web based Application that allows users to share their pictures and save picture
 ## How to run on local Machine.
 1. Make clone of repository on local machine.
 2. Open into visual code.
-3. Run command "npm install" or "npm i" in the terminal of visual code.
+3. Run command "npm install --force" in the terminal of visual code.
 4. Run command "npm run start".
 
 ## Working:
